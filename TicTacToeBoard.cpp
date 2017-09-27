@@ -51,7 +51,7 @@ Piece TicTacToeBoard::placePiece(int row, int column)
 }
 
 
-/**
+/***
  * Returns what piece is at the provided coordinates, or Blank if there
  * are no pieces there, or Invalid if the coordinates are out of bounds
 **/
