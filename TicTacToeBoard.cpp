@@ -13,13 +13,17 @@ TicTacToeBoard::TicTacToeBoard()
       board[i][j] = Blank;
 }
 
+
 /**
  * Switches turn member variable to represent whether it's X's or O's turn
  * and returns whose turn it is
 **/
 Piece TicTacToeBoard::toggleTurn()
 {
-  return Invalid;
+  if(turn == O)
+    return turn = X;
+  else
+    return turn = O;
 }
 
 /**
@@ -33,8 +37,19 @@ Piece TicTacToeBoard::toggleTurn()
 **/ 
 Piece TicTacToeBoard::placePiece(int row, int column)
 {
-  return Invalid;
+  if(row >= BOARDSIZE || column >= BOARDSIZE)
+    return Invalid;
+
+	if(board[row][column] == Blank)
+  {
+		Piece placePiece = turn;
+		board[row][column] = placePiece;
+		toggleTurn();
+		return placePiece;
+	}
+ 	 return board[row][column];
 }
+
 
 /**
  * Returns what piece is at the provided coordinates, or Blank if there
@@ -42,7 +57,7 @@ Piece TicTacToeBoard::placePiece(int row, int column)
 **/
 Piece TicTacToeBoard::getPiece(int row, int column)
 {
-  return Invalid;
+  return board[row][column];
 }
 
 /**
@@ -51,5 +66,18 @@ Piece TicTacToeBoard::getPiece(int row, int column)
 **/
 Piece TicTacToeBoard::getWinner()
 {
-  return Invalid;
+  for(int i = 0; i < BOARDSIZE; i++)
+  {
+   if(board[i][0]==board[i][1] && board[i][0]==board[i][2])
+        return board[i][0];
+   else if(board[0][i]==board[1][i] && board[1][i] == board[2][i])
+        return board[1][i];
+  }
+
+  if(board[0][0] == board[1][1] && board[1][1] == board[2][2])
+      return board[0][0];
+  if(board[0][2] == board[1][1] && board[1][1] == board[2][0])
+      return board[1][1];
+
+   return Invalid;
 }
