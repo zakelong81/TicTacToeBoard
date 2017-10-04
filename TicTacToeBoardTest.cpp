@@ -24,17 +24,17 @@ TEST(TicTacToeBoardTest, sanityCheck)
 TEST(TicTacToeBoardTest, toggleTurnTEST)
 {
 	TicTacToeBoard TTT;
-	bool check = 0;
+	bool check = 1;
 	char turn;
 	if (TTT.toggleTurn() == X)
 	{
 		turn = TTT.toggleTurn();
-		check = 1;
+		check = 0;
 	}
 	if (TTT.toggleTurn() == O)
 	{
 			turn = TTT.toggleTurn();
-			check = 1;
+			check = 0;
 	}
 	ASSERT_EQ(1,check);
 }
