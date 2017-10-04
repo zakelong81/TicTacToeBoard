@@ -57,8 +57,8 @@ TEST(TicTacToeBoardTest, placePieceTEST)
 TEST(TicTacToeBoardTest, WinnerTEST)
 {
   TicTacToeBoard TTT;
-  bool check = 0;
+  bool check = 1;
   if(TTT.getWinner() == X || TTT.getWinner() == O)
-    check = 1;
+    check = 0;
   ASSERT_EQ(1,check);
 }
