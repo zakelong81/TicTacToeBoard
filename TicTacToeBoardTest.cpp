@@ -54,24 +54,6 @@ TEST(TicTacToeBoardTest, placePieceTEST)
 	ASSERT_EQ(1,check);
 }
 
-TEST(TicTacToeBoardTest, ClearBoardTEST)
-{
-  TicTacToeBoard TTT;
-  bool check=0;
-  TTT.clearBoard();
-  for(int i=0;i<3;i++)
-	{
-    for(int j=0;j<3;j++)
-		{
-      if(TTT.getPiece(i,j)!=' ')
-			{
-        check=1;
-      }
-    }
-  }
-  ASSERT_EQ(1,check);
-}
-
 TEST(TicTacToeBoardTest, WinnerTEST)
 {
   TicTacToeBoard TTT;
