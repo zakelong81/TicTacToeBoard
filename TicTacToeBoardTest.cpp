@@ -39,7 +39,7 @@ TEST(TicTacToeBoardTest, toggleTurnTEST)
 	ASSERT_EQ(1,check);
 }
 
-TEST(TicTacToeBoardTest, placePieceTest)
+TEST(TicTacToeBoardTest, placePieceTEST)
 {
   TicTacToeBoard TTT;
   bool check = 0;
@@ -54,7 +54,7 @@ TEST(TicTacToeBoardTest, placePieceTest)
 	ASSERT_EQ(1,check);
 }
 
-TEST(TicTacToeBoardTest, checkClearBoard)
+TEST(TicTacToeBoardTest, ClearBoardTEST)
 {
   TicTacToeBoard TTT;
   bool check=0;
@@ -72,7 +72,7 @@ TEST(TicTacToeBoardTest, checkClearBoard)
   ASSERT_EQ(1,check);
 }
 
-TEST(TicTacToeBoardTest, checkWinner)
+TEST(TicTacToeBoardTest, WinnerTEST)
 {
   TicTacToeBoard TTT;
   bool check = 0;
