@@ -36,10 +36,7 @@ TEST(TicTacToeBoardTest, toggleTurnTEST)
 			turn = TTT.toggleTurn();
 			check = 1;
 	}
-	if (check = 0)
-		ASSERT_FALSE(check);
-	else if (check = 1)
-		ASSERT_TRUE(check);
+	ASSERT_EQ(1,check);
 }
 
 TEST(TicTacToeBoardTest, placePieceTest)
@@ -54,10 +51,7 @@ TEST(TicTacToeBoardTest, placePieceTest)
           check=1;
     }
   }
-	if (check = 0)
-  	ASSERT_FALSE(check);
-	else if (check = 1)
-		ASSERT_TRUE(check);
+	ASSERT_EQ(1,check);
 }
 
 /*
