@@ -54,13 +54,29 @@ TEST(TicTacToeBoardTest, placePieceTest)
 	ASSERT_EQ(1,check);
 }
 
-/*
+TEST(TicTacToeBoardTest, checkClearBoard)
+{
+  TicTacToeBoard TTT;
+  bool check=0;
+  TTT.clearBoard();
+  for(int i=0;i<3;i++)
+	{
+    for(int j=0;j<3;j++)
+		{
+      if(TTT.getPiece(i,j)!=' ')
+			{
+        check=1;
+      }
+    }
+  }
+  ASSERT_EQ(1,check);
+}
+
 TEST(TicTacToeBoardTest, checkWinner)
 {
   TicTacToeBoard TTT;
   bool check = 0;
   if(TTT.getWinner() == X || TTT.getWinner() == O)
     check = 1;
-  ASSERT_TRUE(check);
+  ASSERT_EQ(1,check);
 }
-*/

@@ -20,9 +20,9 @@ TicTacToeBoard::TicTacToeBoard()
 Piece TicTacToeBoard::toggleTurn()
 {
   if(turn == O)
-    return turn = X;
+    turn = X;
   else
-    return turn = O;
+    turn = O;
 }
 
 /**
