@@ -19,7 +19,7 @@ TEST(TicTacToeBoardTest, sanityCheck)
 {
 	ASSERT_TRUE(true);
 }
-
+*/
 
 TEST(TicTacToeBoardTest, toggleTurnTEST)
 {
@@ -29,19 +29,16 @@ TEST(TicTacToeBoardTest, toggleTurnTEST)
 	if (TTT.toggleTurn() == X)
 	{
 		turn = TTT.toggleTurn();
-		if (turn == X)
+		check = 1;
+	}
+	if (TTT.toggleTurn() == O)
+	{
+			turn = TTT.toggleTurn();
 			check = 1;
 	}
-	if (turn == X)
-		if (TTT.toggleTurn() == O)
-		{
-			turn = TTT.toggleTurn();
-			if (turn == O)
-				check = 1;
-		}
 	ASSERT_TRUE(check);
 }
-*/
+
 TEST(TicTacToeBoardTest, placePieceTest)
 {
   TicTacToeBoard TTT;
