@@ -13,7 +13,6 @@ TicTacToeBoard::TicTacToeBoard()
       board[i][j] = Blank;
 }
 
-
 /**
  * Switches turn member variable to represent whether it's X's or O's turn
  * and returns whose turn it is
@@ -28,13 +27,13 @@ Piece TicTacToeBoard::toggleTurn()
 
 /**
  * Places the piece of the current turn on the board, returns what
- * piece is placed, and toggles which Piece's turn it is. placePiece does 
+ * piece is placed, and toggles which Piece's turn it is. placePiece does
  * NOT allow to place a piece in a location where there is already a piece.
- * In that case, placePiece just returns what is already at that location. 
+ * In that case, placePiece just returns what is already at that location.
  * Out of bounds coordinates return the Piece Invalid value. When the game
  * is over, no more pieces can be placed so attempting to place a piece
  * should neither change the board nor change whose turn it is.
-**/ 
+**/
 Piece TicTacToeBoard::placePiece(int row, int column)
 {
   if(row >= BOARDSIZE || column >= BOARDSIZE)
@@ -50,15 +49,11 @@ Piece TicTacToeBoard::placePiece(int row, int column)
  	 return board[row][column];
 }
 
-
-/***
+/**
  * Returns what piece is at the provided coordinates, or Blank if there
  * are no pieces there, or Invalid if the coordinates are out of bounds
 **/
-Piece TicTacToeBoard::getPiece(int row, int column)
-{
-  return board[row][column];
-}
+Piece TicTacToeBoard::getPiece(int row, int column){return board[row][column];}
 
 /**
  * Returns which Piece has won, if there is a winner, Invalid if the game
@@ -66,7 +61,7 @@ Piece TicTacToeBoard::getPiece(int row, int column)
 **/
 Piece TicTacToeBoard::getWinner()
 {
-  for(int i = 0; i < BOARDSIZE; i++)
+  for(int i = 1; i < BOARDSIZE; i++)
   {
    if(board[i][0]==board[i][1] && board[i][0]==board[i][2])
         return board[i][0];
@@ -78,6 +73,5 @@ Piece TicTacToeBoard::getWinner()
       return board[0][0];
   if(board[0][2] == board[1][1] && board[1][1] == board[2][0])
       return board[1][1];
-
    return Invalid;
 }
